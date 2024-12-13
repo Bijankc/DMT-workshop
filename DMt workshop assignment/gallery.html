@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Slider</title>
+    <link rel="stylesheet" href="gallery.css" />
+  </head>
+  <body>
+    <section class="container">
+      <div class="images">
+        <div class="img">
+          <img src="Images/1.jpg" alt="1" />
+          <h1>Black Sabbath</h1>
+          <div class="details">
+            <h2>Black Sabbath</h2>
+            <p>House of the Scorpion</p>
+          </div>
+        </div>
+        <div class="img">
+          <img src="Images/2.jpg" alt="2" />
+          <h1>Slayer</h1>
+          <div class="details">
+            <h2>Slayer</h2>
+            <p>Hell Awaits</p>
+          </div>
+        </div>
+        <div class="img">
+          <img src="Images/2.webp" alt="3" />
+          <h1>Iron Mainden</h1>
+          <div class="details">
+            <h2>Iron Maiden</h2>
+            <p>The Number of The Beast</p>
+          </div>
+        </div>
+        <div class="img active">
+          <img src="Images/4.jpg" alt="4" />
+          <h1>Death</h1>
+          <div class="details">
+            <h2>Death</h2>
+            <p>Leprosy</p>
+          </div>
+        </div>
+        <div class="img">
+          <img src="Images/pain.webp" alt="5" />
+          <h1>Judas Priest</h1>
+          <div class="details">
+            <h2>Judas Priest</h2>
+            <p>Painkiller</p>
+          </div>
+        </div>
+        <div class="img">
+          <img src="Images/6.jpg" alt="6" />
+          <h1>Iron Maiden</h1>
+          <div class="details">
+            <h2>Iron Maiden</h2>
+            <p>Fear of the Dark</p>
+          </div>
+        </div>
+        <div class="img">
+          <img src="Images/7.jpg" alt="7" />
+          <h1>Metallica</h1>
+          <div class="details">
+            <h2>Metallica</h2>
+            <p>And Justice For All</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="js/jquery.js"></script>
+    <script>
+      jQuery(document).ready(function ($) {
+        $(".img").on("click", function () {
+          $(".img").removeClass("active");
+          $(this).addClass("active");
+        });
+      });
+    </script>
+  </body>
+</html>
