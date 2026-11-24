@@ -3,7 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Location</title>
+    <title>Our Location | Bijan Kc Bhurtel - DMT Workshop</title>
+    <!-- Google tag (gtag.js) - Measurement ID comes from js/ga-config.js -->
+    <script src="js/ga-config.js"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      (function (id) {
+        if (!id || id === "G-XXXXXXXXXX") return; // placeholder: tracking disabled
+        var s = document.createElement("script");
+        s.async = true;
+        s.src = "https://www.googletagmanager.com/gtag/js?id=" + id;
+        document.head.appendChild(s);
+        gtag("js", new Date());
+        gtag("config", id);
+      })(window.GA_MEASUREMENT_ID);
+    </script>
     <link rel="stylesheet" href="map.css">
 </head>
 <body>

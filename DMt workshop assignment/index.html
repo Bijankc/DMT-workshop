@@ -3,7 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>index</title>
+    <title>Home | Bijan Kc Bhurtel - DMT Workshop</title>
+    <!-- Google tag (gtag.js) - Measurement ID comes from js/ga-config.js -->
+    <script src="js/ga-config.js"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      (function (id) {
+        if (!id || id === "G-XXXXXXXXXX") return; // placeholder: tracking disabled
+        var s = document.createElement("script");
+        s.async = true;
+        s.src = "https://www.googletagmanager.com/gtag/js?id=" + id;
+        document.head.appendChild(s);
+        gtag("js", new Date());
+        gtag("config", id);
+      })(window.GA_MEASUREMENT_ID);
+    </script>
 
     <link rel="stylesheet" href="john.css">
 </head>
@@ -80,7 +95,7 @@
   <section id="contact">
 
     <h1>Contact</h1>
-    <form action="/submit-contact" method="post">
+    <form id="contact-form" action="/submit-contact" method="post">
       <fieldset>
           <legend>Personal Information</legend>
           <label for="name">Name:</label>
@@ -112,8 +127,19 @@
       </fieldset>
   
       <button type="submit">Submit</button>
+      <p id="contact-status" role="status" hidden>Thanks! Your message has been noted.</p>
   </form>
   </section>
-    
+
+  <script>
+    // GitHub Pages is static hosting, so there is no /submit-contact backend.
+    // Record the submission in GA4 (no personal data is sent) and confirm on the page.
+    document.getElementById("contact-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      gtag("event", "contact_form_submit", { form_id: "contact-form" });
+      this.reset();
+      document.getElementById("contact-status").hidden = false;
+    });
+  </script>
 </body>
 </html>
